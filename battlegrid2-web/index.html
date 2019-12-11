@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OpenStreetMap US BattleGrid Despecialized Edition</title>
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>    
+    <style>
+      .map {
+        width: 100%;
+        position:absolute;
+        top: 0px;
+        bottom: 0px;
+      }
+      .map:-webkit-full-screen {
+        height: 100%;
+        margin: 0;
+      }
+      .map:-ms-fullscreen {
+        height: 100%;
+      }
+      .map:fullscreen {
+        height: 100%;
+      }
+      .ol-rotate {
+        top: 3em;
+      }    
+      #infobox {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 300px;
+        height: 200px;
+        padding: 5px;
+        background-color: rgba(253, 231, 37, 0.8);
+        text-align: center;
+      }
+      #title {
+        font-size: larger;
+        margin-bottom: 5px;
+      }
+      #about {
+        font-size: 0.8em;
+        color: rgb(100, 100, 100);
+      }
+      #status {
+        margin-top: 10px;
+        font-size: 0.8em;
+      }
+      #actions {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <div id="infobox">
+      <div id="title">🐯 battlegrid<sup>2</sup></div>
+      <div id="about">Battlegrid highlights areas with old TIGER roads that need fixing. Darker cells have more bad roads and will take longer to fix. In JOSM, use this as a filter or search to find old roads quickly: <code>type:way highway timestamp:2000-01-01/2010-01-01</code></div>
+      <div id="status">
+        <p><em>Click on a colored cell to begin fixing up old TIGER road mess</em></p>
+      </div>
+      <div id="actions" style="display:none">
+          <a id="editJosmHref" href="#" target=_new>Edit in JOSM</a>
+          <a id="editIdHref" href="#" target="_new">Edit in iD</a>
+          <a href="#" onclick="markDone()">Mark as Done</a>
+      </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
