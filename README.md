@@ -12,6 +12,6 @@ There's three parts to the application:
 
 Each part needs to be set up manually.
 
-* For the cell data, see TBD
+* For the cell data, see [README](battlegrid2-data/README.md)
 * For the web application, see the [README](battlegrid2-web/README.md)
 * For the service, see the [README](battlegrid2-flask/README.md)
