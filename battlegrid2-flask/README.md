@@ -1,0 +1,1 @@
+# Battlegrid 2 cell query service
