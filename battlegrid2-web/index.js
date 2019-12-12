@@ -83,9 +83,7 @@ function createBattleGridCellStyle(feature) {
 var vectorSource = new VectorSource({
   format: new GeoJSON(),
   url: function(extent) {
-    const bottomleft = toLonLat([extent[0], extent[1]]);
-    const topright = toLonLat([extent[2], extent[3]]);
-    return `http://localhost:5000/coverage?minlon=${bottomleft[0]}&minlat=${bottomleft[1]}&maxlon=${topright[0]}&maxlat=${topright[1]}`
+    return `http://localhost:8080/geoserver/battlegrid/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=battlegrid%3Abattlegrid&outputFormat=application%2Fjson&bbox=${extent.join(',')}`
   },
   strategy: bboxStrategy
 });
