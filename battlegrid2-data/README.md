@@ -52,6 +52,18 @@ Then use the Processing Toolbox to create a rectangle grid matching the centroid
 
 ![create grid screenshot](../images/create-grid.png)
 
+Again using the Processing Toolbox, use the Count Points in Polygon function to add the quality metric to the cells. Use the calculated way length as a weight field.
+
+![count pip screenshot](../images/count-pip.png)
+
+The result is a temporary layer in QGIS and the `NUMPOINTS` weirdly is not a real float field, so we need to calculate a new `quality` field first:
+
+![fields screenshot](../images/create-field.png)
+
+Next, load the cells into PostGIS using the `Export to PostgreSQL` Processing tool.
+
+![postgis screenshot](../images/postgis.png)
+
 
 ## Serving the Data
 
@@ -66,3 +78,10 @@ unzip geoserver-2.16.1-war.zip
 ```
 The application should now deploy itself and be available at `http://hostname:8080/geoserver`
 
+### Configure Geoserver
+
+* Create a `battlegrid` workspace
+* Add a `pg_battlegrid` Store to this workspace sourcing from the PostGIS database
+* Publish the `battlegrid` layer
+
+This data is now available for consumption in the web application
