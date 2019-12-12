@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>OpenStreetMap US BattleGrid Despecialized Edition</title>
-    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>    
     <style>
+      body {
+        font-family: helvetica, arial, sans-serif;
+      }
       .map {
         width: 100%;
         position:absolute;
@@ -30,7 +32,6 @@
         top: 10px;
         right: 10px;
         width: 300px;
-        height: 200px;
         padding: 5px;
         background-color: rgba(253, 231, 37, 0.8);
         text-align: center;
@@ -41,7 +42,6 @@
       }
       #about {
         font-size: 0.8em;
-        color: rgb(100, 100, 100);
       }
       #status {
         margin-top: 10px;
@@ -56,9 +56,9 @@
     <div id="map" class="map"></div>
     <div id="infobox">
       <div id="title">🐯 battlegrid<sup>2</sup></div>
-      <div id="about">Battlegrid highlights areas with old TIGER roads that need fixing. Darker cells have more bad roads and will take longer to fix. In JOSM, use this as a filter or search to find old roads quickly: <code>type:way highway timestamp:2000-01-01/2010-01-01</code></div>
+      <div id="about">Battlegrid highlights areas with old roads that may need fixing. Darker cells have more bad roads and will take longer to fix. In JOSM, use this as a filter or search to find old roads quickly: <code>type:way highway timestamp:2000-01-01/2010-01-01</code></div>
       <div id="status">
-        <p><em>Click on a colored cell to begin fixing up old TIGER road mess</em></p>
+        <p><strong>Start by clicking on a colored cell to begin fixing up old roads</strong></p>
       </div>
       <div id="actions" style="display:none">
           <a id="editJosmHref" href="#" target=_new>Edit in JOSM</a>
